@@ -34,8 +34,8 @@ jobs:
     # ✏️ Update deployment.yaml
     - name: Update Image Tag
       run: |
-        #sed -i "s|image: .*|image: $IMAGE_NAME:${{ github.sha }}|g" k8s/deployment.yaml
-        sed -i "s|IMAGE_PLACEHOLDER|$IMAGE_NAME:${{ github.sha }}|g" k8s/deployment.yaml
+        sed -i "s|image: .*|image: $IMAGE_NAME:${{ github.sha }}|g" k8s/deployment.yaml
+        #sed -i "s|IMAGE_PLACEHOLDER|$IMAGE_NAME:${{ github.sha }}|g" k8s/deployment.yaml
 
     # 📤 Commit Git again (🔥 KEY) 
     - name: Commit & Push
