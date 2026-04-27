@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: IMAGE_PLACEHOLDER
+          image: nhutq/angocd-basic:5f0fc16c7e04f32ef693637228a53c59c4705ee6
           imagePullPolicy: Always   # Important
           ports:
             - containerPort: 80
