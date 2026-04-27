@@ -3,12 +3,16 @@ kind: Application
 metadata:
   name: nginx-gitops
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: nginx=tqnhu4/nginx-demo
+    argocd-image-updater.argoproj.io/nginx.update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: git  
 spec:
   project: default
 
   source:
     repoURL: https://github.com/tqnhu4/argocd-basic.git
-    targetRevision: HEAD
+    targetRevision: main
     path: k8s
 
   destination:
